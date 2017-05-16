@@ -464,7 +464,7 @@
 
 		$(document).on('click', '#enviarMensagem', function() {
 			var enviar = $(this);
-			$.post('./sendrsvp.php', {nomes: $('#mensagem').val()}, function() {
+			$.post('./sendmessage.php', {nomes: $('#mensagem').val()}, function() {
 				enviar.closest('.row').html("<div class='col-md-8 col-md-offset-2 text-center fh5co-heading'><h2>Obrigado pelo carinho!</h2></div>");
 			});
 		});
