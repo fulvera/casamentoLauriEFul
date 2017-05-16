@@ -52,6 +52,7 @@
 						<li><a class="js-menu-item" data-href="#fh5co-couple">Noivos</a></li>
 						<li><a class="js-menu-item" data-href="#fh5co-event">Evento</a></li>
 						<li><a class="js-menu-item" data-href="#fh5co-couple-story">Nossa História</a></li>
+						<li><a class="js-menu-item" data-href="#fh5co-message">Deixe um recado</a></li>
 						<li><a class="js-menu-item" data-href="#fh5co-gallery">Presentes</a></li>
 						<li><a class="js-menu-item" data-href="#fh5co-started">RSVP</a></li>
 					</ul>
@@ -108,7 +109,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
+	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg); background-position: 50%;">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -221,7 +222,30 @@
 			</div>
 		</div>
 	</div>
-
+	<div id="fh5co-message" class="fh5co-bg" style="background-image:url(images/img_bg_6.jpg); background-position: 100% 50%;">
+		<div class="overlay"></div>
+		<div class="container">	
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Deixe um recado para os noivos</h2>
+				</div>
+			</div>
+			<div class="row animate-box">
+				<div class="col-md-10 col-md-offset-1">
+					<form class="form">
+						<div class="col-sm-8 col-sm-offset-2">
+							<div class="form-group">
+								<textarea class="form-control" placeholder="Mensagem" id="mensagem"></textarea>
+							</div>
+						</div>
+						<div class="col-sm-4 col-sm-offset-4">
+							<button type="button" id="enviarMensagem" class="btn btn-default btn-block">Enviar mensagem</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="fh5co-gallery" class="fh5co-section-gray">
 		<div class="container">
 			<div class="row">
@@ -349,7 +373,7 @@
 							Ou<br/ >
 							Banco Itaú<br/ >
 							Ag: 5275<br/ >
-							C/C: 65625-6<br/ >
+							C/C: 65624-6<br/ >
 							CPF: 230.029.478-81<br/ >
 							Nome: Ana Laura Tronzano Campos</p>
 						</div>
@@ -435,6 +459,13 @@
 			var enviar = $(this);
 			$.post('./sendrsvp.php', {nomes: $('#nomes').val()}, function() {
 				enviar.closest('.row').html("<div class='col-md-8 col-md-offset-2 text-center fh5co-heading'><h2>Será um prazer recebê-lo(s)!</h2></div>");
+			});
+		});
+
+		$(document).on('click', '#enviarMensagem', function() {
+			var enviar = $(this);
+			$.post('./sendrsvp.php', {nomes: $('#mensagem').val()}, function() {
+				enviar.closest('.row').html("<div class='col-md-8 col-md-offset-2 text-center fh5co-heading'><h2>Obrigado pelo carinho!</h2></div>");
 			});
 		});
 		
