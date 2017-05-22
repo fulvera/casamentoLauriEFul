@@ -469,11 +469,11 @@
 			});
 		});
 		
-		$(document).on('click', '.js-cota', function () {
+		$('.js-cota').click(function () {
 			var codigo = $(this).data('codigo');
 			var lightboxOpened = PagSeguroLightbox(codigo);
 			if(!lightboxOpened)
-				location.href="https://pagseguro.uol.com.br/v2/checkout/payment.html?code="+codigo;
+				window.open("https://pagseguro.uol.com.br/v2/checkout/payment.html?code=" + codigo);
 		});
 	</script>
 
