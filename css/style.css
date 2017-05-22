@@ -1843,3 +1843,6 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
+.js-menu-item, .js-cota{
+  cursor: pointer;
+}
