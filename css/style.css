@@ -1846,3 +1846,7 @@ form label {
 .js-menu-item, .js-cota{
   cursor: pointer;
 }
+
+#fh5co-gallery-list{
+  z-index: 99999999999;
+}

@@ -467,7 +467,7 @@
 			});
 		});
 		
-		$('.js-cota').click(function () {
+		$(document).on('touchstart click', '.js-cota', function () {
 			var codigo = $(this).data('codigo');
 			var lightboxOpened = PagSeguroLightbox(codigo);
 			if(!lightboxOpened)
